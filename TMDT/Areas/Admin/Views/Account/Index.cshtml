@@ -1,0 +1,11 @@
+﻿@model PagedList.IPagedList<Model.EF.Account>
+@using PagedList.Mvc;
+@{
+    ViewBag.Title = "Quản trị người dùng";
+    Layout = "~/Areas/Admin/Views/Shared/_Layout.cshtml";
+}
+
+@section header{
+    Danh sách người dùng
+}
+@Html.PagedListPager(Model, page => Url.Action("Index", new { page }))
